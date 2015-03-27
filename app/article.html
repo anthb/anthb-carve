@@ -1,0 +1,103 @@
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>anthb carve</title>
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:css styles/main.css -->
+    <link href='http://fonts.googleapis.com/css?family=Lato:700|Merriweather:400,700,400italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+
+    <!-- build:js scripts/vendor/modernizr.js -->
+    <script src="/bower_components/modernizr/modernizr.js"></script>
+    <!-- endbuild -->
+  </head>
+  <body>
+    <!--[if lt IE 10]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <header class="page-head">
+      <h1 class="t-heading">Hello, I'm Anthony Bordonaro.</h1>
+      <p class="t-body">I write about Front End development and my adventures on the web. I live in Melbourne, Australia and work at <a href="http://www.envato.com">Envato</a>.</p>
+    </header>
+
+    <div class="section-wrap">
+      <section class="container--layout-article">        
+
+        <h1 class="t-heading -size-large -align-center">Fiddler the handy app that is a web developers best friend</h1>
+        <time class="datetime--article" datetime="2014-09-15 19:00">September 2014</time>
+        <div class="post-content">
+          <p>So I really love the <a class="t-link" href="http://www.telerik.com/fiddler">Fiddler</a> app, at work I mostly use Windows and this tool is absolute killer. There is a Mac version, but it needs a lot of love and isn't as good right now. I mostly use it for remote debugging both local and on external server.</p>
+          <h3 id="fiddler-as-a-proxy-server">Fiddler as a proxy server</h3>
+          <p>I basically use it for two purposes as a proxy server:</p>
+          <ul>
+          <li>Access my local deployment of dev websites on other devices</li>
+          <li>Capture those devices traffic for debugging</li>
+          </ul>
+          <p>Both of these points require access to an external device, an example will be I'm running a CMS locally which has a host of <em>abc.dev.example.com</em> normally you could add a host entry to your device to access this site, but on iOS you're restricted from doing so. Fiddler allows you to create a proxy really easily so that your iOS device can now connect to your machine seamlessly.</p>
+          <p>To do this there's only really two steps which is explained in the <a class="t-link" href="http://docs.telerik.com/fiddler/configure-fiddler/tasks/ConfigureForiOS">fiddler docs</a>. Take a read of the docs to see the detailed example, but basically you:</p>
+          <ol>
+          <li>Tell Fiddler to allow remote computers to connect</li>
+          <li>Set the device proxy in your network settings</li>
+          </ol>
+          <p>It's really as simple as that. Once this is configured you can navigate to <em>abc.dev.example.com</em> on your iPad or iPhone and browse the site.</p>
+          <h3 id="remote-debugging-locally-on-ios">Remote debugging locally on iOS</h3>
+          <p>If you have also have a Mac you can now debug your local dev site on your iPhone / iPad with Safari, by pairing the device with the Mac and finding your device in the Safari develop toolbar. You also have the added bonus that Fiddler is capturing all your traffic from this device, so you can see exactly what is being sent down.</p>
+          <h3 id="remote-debugging-on-an-external-server">Remote debugging on an external server</h3>
+          <p>I've explained above how you can use Fiddler on your local environment, but often something has been deployed to an environment I don't have access to like a UAT environment, if I need to debug something on this it can often be guess work. Fiddler has another awesome feature called <a class="t-link" href="http://docs.telerik.com/fiddler/knowledgebase/autoresponder">AutoResponder</a>, it allows your to return files from your local machine instead of a resource from the server. You do this by setting an AutoResponder rule where you match the resource on the server that you want replaced with something on your local. If I need to test a JavaScript or CSS issue that is present on an environment that I cannot reproduce locally, this gives me the absolute certainty I require.</p>
+          <h3 id="composing-http-requests">Composing HTTP Requests</h3>
+          <p>Sometimes you might have the need to compose a request, as a front-end dev I use JSON feeds quite a lot. Often these are configured to only display JSON if youh have the correct header information, if I access the feed directly in the browser it might return an error or default to XML. The <a class="t-link" href="http://docs.telerik.com/fiddler/modify-traffic/tasks/customizerequest">Fiddler composer</a> feature allows you to customise a request and add whatever headers you wish.</p>
+          <p>I'm sure it has dozens of other useful features I'm not aware of, but that's a few of my main uses for Fiddler. If you haven't used it before I hope this post helps you find what you could use it for.</p>
+
+    </div>
+      </section>
+
+      <aside class="container--layout-one-third">
+        <img class="profile-photo -center-align" src="images/anthony-bordonaro.jpg" alt="Anthony Bordonaro - that's me">
+
+        <section class="social-links">
+          <h3 class="t-heading -size-medium">Follow me</h3>
+          <ul class="social-links__list">
+            <li class="social-links__item">
+              <a href="https://twitter.com/bordy_7" class="social-links__twitter"><span class="visually-hidden">Twitter</span></a>
+            </li>
+
+            <li class="social-links__item">
+              <a href="https://github.com/anthb" class="social-links__github"><span class="visually-hidden">Github</span></a>
+            </li>
+          </ul>
+        </section>
+      </aside>
+    </div>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='//www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-XXXXX-X');ga('send','pageview');
+    </script>
+
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+        <!-- build:js scripts/main.js -->
+        <script src="scripts/main.js"></script>
+        <!-- endbuild -->
+</body>
+</html>

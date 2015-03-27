@@ -1,0 +1,294 @@
+// bower:scss
+// endbower
+
+
+// Include autoprefixr
+
+$lato: 'Lato', sans-serif;
+$merriweather: 'Merriweather', serif;
+
+
+// Media Queries
+$large-up: "screen and (min-width: 1100px)";
+$medium-up: "screen and (min-width: 640px)";
+
+// Colours
+$white: #fff;
+$black: #000;
+$primary-grey: #333;
+$secondary-grey: #999;
+$border-grey: #ddd;
+//$background-grey: #ededed;
+$background-grey: #f2f2f2;
+$purple: #A52A55;
+$off-white: #fafafa;
+
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body {
+  background: $background-grey;
+  font-family: $merriweather;
+  color: $primary-grey;
+  margin: 0;
+  font-size: 100%;
+  line-height: 1.5;
+}
+
+img {
+  max-width: 100%;
+}
+
+
+// Headings and type
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: $lato;
+}
+
+
+
+.t-heading {
+  margin: 10px 0;
+
+  &.-size-large {
+    font-size: 2em;
+  }
+
+  &.-size-medium {
+    font-size: 1.65em;
+  }
+
+  &.-size-small {
+    font-size: 1.25em;
+  }
+
+  &.-align-center {
+    text-align: center;
+  }
+
+  a {
+    text-decoration: none;
+
+    &:hover {
+      color: $purple;
+    }
+  }
+}
+
+.t-link {
+  //text-decoration: none;
+  color: $primary-grey;
+  transition: 0.5s color;
+
+  &:hover {
+    color: $purple;
+  }
+}
+
+
+// Helpers
+.h-no-margin__top {
+  margin-top: 0;
+}
+
+.h-no-margin__bottom {
+  margin-bottom: 0;
+}
+
+
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.datetime {
+  font-size: 0.8em;
+  display: block;
+  margin-bottom: 1.5em;
+  font-style: italic;
+  color: $secondary-grey;
+}
+
+.datetime--article {
+  @extend .datetime;
+  font-size: 1em;
+  text-align: center;
+}
+
+// Containers
+
+.section-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  @media #{$large-up} {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+}
+
+
+// this will need to be better thought out for mobile etc.
+.container {
+  padding: 0 1em;
+  margin-bottom: 1.5em;
+  flex-basis: 100%;
+  @media #{$large-up} {
+    flex: 2 0 66%;
+  }
+}
+
+.container--layout-one-third {
+  @extend .container;
+  @media #{$large-up} {
+    flex: 2 0 33%;
+  }
+}
+
+.container--layout-two-third {
+  @extend .container;
+  @media #{$large-up} {
+    flex: 2 0 66%;
+  }
+}
+
+.container--layout-article {
+  @extend .container;
+  @media #{$large-up} {
+    padding: 0 10em;
+    flex: 2 0 100%;
+  }
+}
+
+
+// Page head
+
+.page-head {
+  background: $purple;
+  padding: 1em;
+  margin-bottom: 2em;
+  border-bottom: 3px solid $primary-grey;
+  text-align: center;
+  color: $white;
+
+  a {
+    color: $white;
+  }
+}
+
+// Article List
+
+.article-list {
+  list-style: none;
+  padding: 0;
+
+  a {
+    color: $primary-grey;
+  }
+
+}
+
+.article-list__item {
+  border-bottom: 1px solid $border-grey;
+  margin: 1em 0;
+}
+
+.article-list__heading {
+  margin-bottom: 0;
+
+  a {
+    text-decoration: none;
+
+    &:hover {
+      color: $purple;
+    }
+  }
+}
+
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+
+
+//
+
+.profile-photo {
+  border-radius: 50% 0;
+  border: 5px solid $white;
+  box-shadow: 0 1px 5px -2px;
+  transition: 0.5s border-radius;
+
+  &:hover {
+    border-radius: 0 50%;
+  }
+
+  &:active {
+    border-radius: 50%;
+  }
+
+  &.-center-align {
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+
+.social-links {
+  margin-top: 1em;
+  text-align: center;
+}
+
+.social-links__list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.social-links__item {
+  padding: 0 1em 0 0;
+}
+
+%social-links__placeholder {
+  width: 50px;
+  height: 50px;
+  display: block;
+}
+
+
+.social-links__twitter {
+  @extend %social-links__placeholder;
+  background: url(../images/twitter.svg) no-repeat;
+  background-size: 50px
+}
+
+.social-links__github {
+  @extend %social-links__placeholder;
+  background: url(../images/github.svg) no-repeat;
+  background-size: 50px
+}
+
+
+// Posts.
+
+.post-content {
+  border-top: 1px dashed $border-grey;
+}
