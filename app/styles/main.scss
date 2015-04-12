@@ -24,12 +24,28 @@ $purple: #A52A55;
 $off-white: #fafafa;
 
 
+@mixin clearfix {
+
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  &:after {
+    clear: both;
+  }
+
+}
+
+
 *, *:before, *:after {
   box-sizing: border-box;
 }
 
 body {
-  background: $background-grey;
+  background: $purple;
   font-family: $merriweather;
   color: $primary-grey;
   margin: 0;
@@ -55,6 +71,14 @@ h4 {
 
 .t-heading {
   margin: 10px 0;
+
+  &.-color-primary {
+    color: $purple;
+  }
+
+  &.-size-extra-large {
+    font-size: 3em;
+  }
 
   &.-size-large {
     font-size: 2em;
@@ -133,11 +157,8 @@ h4 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-
-  @media #{$large-up} {
-    max-width: 90%;
-    margin: 0 auto;
-  }
+  background: $background-grey;
+  padding: 1.5em 0
 }
 
 
@@ -168,8 +189,8 @@ h4 {
 .container--layout-article {
   @extend .container;
   @media #{$large-up} {
-    padding: 0 10em;
-    flex: 2 0 100%;
+    max-width: 55%;
+    margin: 0 auto;
   }
 }
 
@@ -179,7 +200,6 @@ h4 {
 .page-head {
   background: $purple;
   padding: 1em;
-  margin-bottom: 2em;
   border-bottom: 3px solid $primary-grey;
   text-align: center;
   color: $white;
@@ -189,14 +209,26 @@ h4 {
   }
 }
 
+
+
+// Page footer
+.page-footer {
+  padding: 0.25em 0;
+  background: $purple;
+  color: $white;
+  text-align: center;
+}
+
 // Article List
 
 .article-list {
   list-style: none;
   padding: 0;
+  text-align: center;
 
   a {
     color: $primary-grey;
+    transition: color 0.35s;
   }
 
 }
@@ -225,15 +257,15 @@ h4 {
   padding: 0.2em 0;
 }
 
-
-
-//
-
 .profile-photo {
+  //float: right;
+  width: 125px;
+  //margin-left: 2em;
   border-radius: 50% 0;
-  border: 5px solid $white;
-  box-shadow: 0 1px 5px -2px;
+  border: 3px solid $white;
+  //box-shadow:0 1px 15px 0px #52182C;
   transition: 0.5s border-radius;
+  cursor: pointer;
 
   &:hover {
     border-radius: 0 50%;
@@ -241,11 +273,6 @@ h4 {
 
   &:active {
     border-radius: 50%;
-  }
-
-  &.-center-align {
-    margin: 0 auto;
-    display: block;
   }
 }
 
@@ -290,5 +317,14 @@ h4 {
 // Posts.
 
 .post-content {
-  border-top: 1px dashed $border-grey;
+  border-top: 1px dashed $purple;
+}
+
+
+// About
+.about {
+  background: #d3d3d3;
+  padding: 1.5em 0;
+  text-align: center;
+  @include clearfix();
 }
